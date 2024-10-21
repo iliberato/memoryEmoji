@@ -3,7 +3,9 @@ const modal = document.getElementById("modal");
 const caixaTempo = document.getElementById("tempo");
 const caixaTempoTotal = document.getElementById("tempoTotal");
 
+    
 const recorde = localStorage.getItem("recorde");
+
 document.getElementById("recorde").innerHTML = recorde;
 
 const emojis = [
@@ -82,7 +84,7 @@ function checkMatch() {
         let tempoWinner = timer;
         caixaTempoTotal.innerHTML = tempoWinner;
 
-        if (tempoWinner < recorde) {
+        if (tempoWinner < recorde || recorde === null) {
             
             localStorage.setItem("recorde", tempoWinner)
         }
