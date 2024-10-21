@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/main.css">
+    
+    <title>MemoryEmoji</title>
+</head>
+<body>
+
+    <div id="modal">
+        <h1>Venceu !!!</h1>
+
+        <img src="https://i.pinimg.com/originals/87/6f/ab/876fab6207f93c293ae77a70f188c402.gif" alt="imagem" width="300">
+
+        <p>
+            Tempo Total: <span id="tempoTotal">0 </span>segundos.
+        </p>
+    </div>
+
+    <div class="container">
+        <p style="color: #fff;">
+            Tempo: <span id="tempo">0 </span>segundos. <br>
+            <span> Ultimo Recorde: 
+                <span id="recorde"> 0</span>segundos.
+            </span>
+        </p>
+        <h2>JOGO DA MEMORIA</h2>
+        <div class="game"></div>
+        <button class="reset" onclick="window.location.reload()">RESET GAME</button>
+    </div>
+    <audio id=“id-audio” src=""></audio>
+    
+
+    <script src="./src/scripts/engine.js" defer></script>
+</body>
+</html>

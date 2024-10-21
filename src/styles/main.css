@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #fc1e8a;
+    user-select: none;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.875rem;
+    background: linear-gradient(
+        325deg,
+        #03001e 0%, 
+        #7303c0 30%,
+        #ec38bc 70%,
+        #fdeff9 100%
+        );
+    padding: 2.5rem 3.75rem;    
+}
+
+h2 {
+    font-size: 3em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.reset {
+    padding: .9375rem 1.25rem;
+    width: 100%;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.reset:focus {
+    color: #ec38bc;
+    background-color: #262809;
+}
+
+
+
+.game {
+    width: 26.875rem;
+    height: 26.875rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .625rem;
+    transform-style: preserve-3d;
+    perspective: 31.25rem;
+}
+
+#modal {
+    position: absolute;
+    top: 24%;
+    height: 26.875rem;
+    width: 26.875rem;
+    /* z-index: 1; */
+    background-color: #fff;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 8px;
+
+}
+
+.item {
+    position: relative;
+    width: 6.25rem;
+    height: 6.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    font-size: 3em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #404040;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    opacity: 0.85;
+}
+
+.item.boxOpen {
+    transform: rotateY(0deg);
+}
+
+.boxOpen::after,
+.boxMatch::after {
+    transform: rotateY(180deg);
+}
+
+@media (max-width: 600px) {
+    .container {
+        gap: 5rem;
+        height: 100vh;
+
+    }
+}
